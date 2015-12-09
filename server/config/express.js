@@ -1,33 +1,30 @@
 // EXPRESS CONFIGURATION FILE
 
-var environment = process.env.NODE_ENV,
-    config = require('./config'),
+var config = require('./config'),
 
     // middleware
     express = require('express'),
     bodyParser = require('body-parser'),
-    session = require('express-session');
+    session = require('express-session'),
+    morgan = require('morgan');
 
 
 module.exports = function () {
 
     var app = express();
 
-    // this middleware will run no matter the environment
+    // configuring the express app
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
-
+    app.use(morgan('dev'));
     app.use(session({
         saveUninitialized: true,
         resave: true,
         secret: config.sessionSecret
     }));
 
-    // environment dependant middleware
-    if (environment === 'development') {
-        var morgan = require('morgan');
-        app.use(morgan('dev'));
-    }
+    // friends API
+    require('../apis/friends/friend.routes')(app);
 
     // static assets folder (angular app)
     app.use(express.static('./public'));
