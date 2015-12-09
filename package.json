@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "engines": {
-    "node": "4.2.1",
-    "npm": "3.3.9"
-  },
+//   "engines": {
+//     "node": "4.2.1",
+//     "npm": "3.3.9"
+//   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
