@@ -1,18 +1,23 @@
 {
-  "name": "hosting-brownbag",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.14.1",
-    "express": "^4.13.3",
-    "express-session": "^1.12.1",
-    "morgan": "^1.6.1"
-  }
+    "name": "hosting-brownbag",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "engines": {
+        "node": "4.2.1",
+        "npm": "3.3.9"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js",
+        "postinstall": ""
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.14.1",
+        "express": "^4.13.3",
+        "express-session": "^1.12.1",
+        "morgan": "^1.6.1"
+    }
 }
